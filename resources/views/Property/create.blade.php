@@ -3,7 +3,6 @@
 {{--<x-addProperty/>--}}
 <!-- Our Dashbord -->
 <section class="our-dashbord dashbord bgc-f7 pb50">
-
     <div class="container-fluid ovh">
         <div class="row">
             <div class="col-lg-3 col-xl-2 dn-992 pl0"></div>
@@ -46,16 +45,12 @@
                                             <input type="text" class="form-control" id="propertyTitle" name="property_name">
                                         </div>
                                     </div>
-
-
-
                                     <div class="col-lg-12">
                                         <div class="my_profile_setting_textarea">
                                             <label for="propertyDescription">Property Description</label>
                                             <textarea class="form-control" id="propertyDescription" name="property_description" rows="7"></textarea>
                                         </div>
                                     </div>
-
                                     <div class="col-lg-6 col-xl-6">
                                         <div class="my_profile_setting_input ui_kit_select_search form-group">
                                             <label>Date Of Construction</label>
@@ -65,7 +60,7 @@
                                     <div class="col-lg-6 col-xl-6">
                                         <div class="my_profile_setting_input ui_kit_select_search form-group">
                                             <label>Property Location</label>
-                                            <select class="selectpicker" name="property_location" data-live-search="true" data-width="100%">
+                                            <select class="selectpicker" name="property_location"  data-width="100%">
                                                 <option selected="selected" value="">No Location selected</option>
                                                     @foreach($district as $locate)
                                                     <optgroup label="{{$locate->name}}">
@@ -144,26 +139,14 @@
                                         <div class="shortcode_widget_switch">
                                             <h5 class="mb20">Property on Promotion</h5>
                                             <div class="ui_kit_whitchbox">
-                                                {{--                                                <div class="custom-control custom-switch">--}}
-                                                {{--                                                    <input type="checkbox" name="property_promotion" class="custom-control-input" id="customSwitch1">--}}
-                                                {{--                                                    <label class="custom-control-label" for="customSwitch1">Promotion</label>--}}
-                                                {{--                                                </div>--}}
-                                                {{--                                                <div class="custom-control custom-switch">--}}
-                                                {{--                                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">--}}
-                                                {{--                                                    <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>--}}
-                                                {{--                                                </div>--}}
                                                 <div class="my_profile_setting_input ui_kit_select_search form-group">
                                                     <label>Property Promotion</label>
                                                     {{Form::select('property_promotion', [true => 'ON', false => 'OFF'], false,['class'=>'selectpicker'])}}
-
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-
-
                             </div>
                             <div class="my_dashboard_review mt30">
                                 <div class="row">
@@ -279,13 +262,9 @@
                                     <div class="col-lg-12">
                                         <h4 class="mb30">Property Media</h4>
                                     </div>
-
                                     <div class="col-xl-6">
                                         <div class="resume_uploader mb30">
                                             <h4>Property Image</h4>
-
-
-
                                             <div class="form-group">
                                                 <input type="file" name="file" class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" >
                                                 @if ($errors->has('file'))
@@ -294,15 +273,6 @@
                                                 </span>
                                                 @endif
                                             </div>
-
-
-
-                                            {{--                                        <div class="wrap-custom-file">--}}
-                                            {{--                                            <input type="file" name="property_main_image_url" id="image" accept=".gif, .jpg, .png"/>--}}
-                                            {{--                                            <label  for="image">--}}
-                                            {{--                                                <span><i class="flaticon-download"></i> Upload Property Image </span>--}}
-                                            {{--                                            </label>--}}
-                                            {{--                                        </div>--}}
                                         </div>
                                     </div>
                                     <div class="col-xl-12">

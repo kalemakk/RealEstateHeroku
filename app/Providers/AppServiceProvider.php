@@ -28,8 +28,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['home'],Propertycomposer::class);
-        View::composer(['home','Property.*'],Locationcomposer::class);
+        View::composer(['home','admin.*','Property.*'],Propertycomposer::class);
+        View::composer(['home','Property.*','partials.*',],Locationcomposer::class);
 
         //
     }

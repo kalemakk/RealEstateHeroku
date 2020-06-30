@@ -34,5 +34,11 @@ class Property extends Model
     public function location(){
         return $this->belongsTo('App\Location');
     }
+
+//    public function locationDistrict()
+//    {
+//        return $this->hasOneThrough('App\District', 'App\Location');
+//    }
+
 }
 

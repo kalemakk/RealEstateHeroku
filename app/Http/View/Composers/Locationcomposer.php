@@ -12,6 +12,7 @@ class Locationcomposer
 {
     public function compose(View $view){
         $view->with('location',District::orderBy('name','asc')->get());
+
     }
 
 }

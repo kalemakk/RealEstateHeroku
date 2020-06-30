@@ -10,29 +10,29 @@
                             <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
                             <div class="sidebar_listing_list style2 mb0">
                                 <div class="sidebar_advanced_search_widget">
-                                    <h4 class="mb25">Advanced Search <a class="filter_closed_btn float-right" href="#"><small>Hide Filter</small> <span class="flaticon-close"></span></a></h4>
+                                    <h4 class="mb25">Search Particular Property <a class="filter_closed_btn float-right" href="#"><small>Hide Filter</small> <span class="flaticon-close"></span></a></h4>
                                     <ul class="sasw_list style2 mb0">
+                                        <form action="{{url('search')}}">
                                         <li>
                                             <div class="search_option_two">
                                                 <div class="candidate_revew_select">
-                                                    <select class="selectpicker  w100 show-tick">
+                                                    <select class="selectpicker  w100 show-tick" name="property_type">
                                                         <option>Property Type</option>
-                                                        <option>Apartment</option>
-                                                        <option>Bungalow</option>
-                                                        <option >Cottage</option>
-                                                        <option>Duplex</option>
-                                                        <option>Maisonette</option>
-                                                        <option>Mansion</option>
-                                                        <option >Penthouse</option>
-{{--                                                        <option>Rental Units</option>--}}
-{{--                                                        <option>Residential Land</option>--}}
-{{--                                                        <option>Semi Detached</option>--}}
-{{--                                                        <option>Shell House</option>--}}
-{{--                                                        <option>Storyed House</option>--}}
-{{--                                                        <option>Studio</option>--}}
-{{--                                                        <option>Town House</option>--}}
-{{--                                                        <option>Villa</option>--}}
-
+                                                        <option value="apartment">Apartment</option>
+                                                        <option value="bungalow">Bungalow</option>
+                                                        <option value="cottage">Cottage</option>
+                                                        <option value="duplex">Duplex</option>
+                                                        <option value="maisonette">Maisonette</option>
+                                                        <option value="mansion">Mansion</option>
+                                                        <option value="penthouse">Penthouse</option>
+                                                        <option value="rental_units">Rental Units</option>
+                                                        <option value="residential_land">Residential Land</option>
+                                                        <option value="semi_detached">Semi Detached</option>
+                                                        <option value="shell_house">Shell House</option>
+                                                        <option value="storyed_house">Storyed House</option>
+                                                        <option value="studio">Studio</option>
+                                                        <option value="town_house">Town House</option>
+                                                        <option value="villa">Villa</option>
                                                     </select>
 
                                                 </div>
@@ -41,14 +41,10 @@
                                         <li>
                                             <div class="search_option_two">
                                                 <div class="candidate_revew_select">
-                                                    <select class="selectpicker w100 show-tick">
-                                                        <option>Property Type</option>
-                                                        <option>Apartment</option>
-                                                        <option>Bungalow</option>
-                                                        <option>Condo</option>
-                                                        <option>House</option>
-                                                        <option>Land</option>
-                                                        <option>Single Family</option>
+                                                    <select class="selectpicker w100 show-tick" name="property_category">
+                                                        <option selected value="">Property Category</option>
+                                                        <option value="rent">Rent</option>
+                                                        <option value="sale">Sale</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -71,188 +67,71 @@
                                         <li>
                                             <div class="search_option_two">
                                                 <div class="candidate_revew_select">
-                                                    <select class="selectpicker w100 show-tick">
-                                                        <option>Bathrooms</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
-                                                        <option>6</option>
+                                                    <select class="selectpicker w100 show-tick" name="property_location">
+                                                        <option selected="selected" value="">Select Location</option>
+                                                        @foreach($district as $locate)
+                                                            <optgroup label="{{$locate->name}}">
+                                                                @foreach($locate->locations as $state)
+                                                                    <option class="text-capitalize" value="{{$state->state}}">{{$state->state}}</option>
+                                                                @endforeach
+                                                            </optgroup>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="search_option_two">
-                                                <div class="candidate_revew_select">
-                                                    <select class="selectpicker w100 show-tick">
-                                                        <option>Bedrooms</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
-                                                        <option>6</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="search_option_two">
-                                                <div class="candidate_revew_select">
-                                                    <select class="selectpicker w100 show-tick">
-                                                        <option>Garages</option>
-                                                        <option>Yes</option>
-                                                        <option>No</option>
-                                                        <option>Others</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="search_option_two">
-                                                <div class="candidate_revew_select">
-                                                    <select class="selectpicker w100 show-tick">
-                                                        <option>Year built</option>
-                                                        <option>2013</option>
-                                                        <option>2014</option>
-                                                        <option>2015</option>
-                                                        <option>2016</option>
-                                                        <option>2017</option>
-                                                        <option>2018</option>
-                                                        <option>2019</option>
-                                                        <option>2020</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="min_area style2 list-inline-item">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleInputName2" placeholder="Min Area">
-                                            </div>
-                                        </li>
-                                        <li class="max_area list-inline-item">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleInputName3" placeholder="Max Area">
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div id="accordion" class="panel-group">
-                                                <div class="panel">
-                                                    <div class="panel-heading">
-                                                        <h4 class="panel-title">
-                                                            <a href="#panelBodyRating" class="accordion-toggle link" data-toggle="collapse" data-parent="#accordion"><i class="flaticon-more"></i> Advanced features</a>
-                                                        </h4>
-                                                    </div>
-                                                    <div id="panelBodyRating" class="panel-collapse collapse">
-                                                        <div class="panel-body row">
-                                                            <div class="col-lg-12">
-                                                                <ul class="ui_kit_checkbox selectable-list float-left fn-400">
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                                            <label class="custom-control-label" for="customCheck1">Air Conditioning</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                                                            <label class="custom-control-label" for="customCheck4">Barbeque</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck10">
-                                                                            <label class="custom-control-label" for="customCheck10">Gym</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                                                            <label class="custom-control-label" for="customCheck5">Microwave</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                                                            <label class="custom-control-label" for="customCheck6">TV Cable</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                                                            <label class="custom-control-label" for="customCheck2">Lawn</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck11">
-                                                                            <label class="custom-control-label" for="customCheck11">Refrigerator</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                                                            <label class="custom-control-label" for="customCheck3">Swimming Pool</label>
-                                                                        </div>
-                                                                    </li>
-                                                                </ul>
-                                                                <ul class="ui_kit_checkbox selectable-list float-right fn-400">
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck12">
-                                                                            <label class="custom-control-label" for="customCheck12">WiFi</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck14">
-                                                                            <label class="custom-control-label" for="customCheck14">Sauna</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck7">
-                                                                            <label class="custom-control-label" for="customCheck7">Dryer</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck9">
-                                                                            <label class="custom-control-label" for="customCheck9">Washer</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck13">
-                                                                            <label class="custom-control-label" for="customCheck13">Laundry</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck8">
-                                                                            <label class="custom-control-label" for="customCheck8">Outdoor Shower</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck15">
-                                                                            <label class="custom-control-label" for="customCheck15">Window Coverings</label>
-                                                                        </div>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
+{{--                                        <li>--}}
+{{--                                            <div class="search_option_two">--}}
+{{--                                                <div class="candidate_revew_select">--}}
+{{--                                                    <select class="selectpicker w100 show-tick">--}}
+{{--                                                        <option>Bedrooms</option>--}}
+{{--                                                        <option>1</option>--}}
+{{--                                                        <option>2</option>--}}
+{{--                                                        <option>3</option>--}}
+{{--                                                        <option>4</option>--}}
+{{--                                                        <option>5</option>--}}
+{{--                                                        <option>6</option>--}}
+{{--                                                    </select>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </li>--}}
+{{--                                        <li>--}}
+{{--                                            <div class="search_option_two">--}}
+{{--                                                <div class="candidate_revew_select">--}}
+{{--                                                    <select class="selectpicker w100 show-tick">--}}
+{{--                                                        <option>Garages</option>--}}
+{{--                                                        <option>Yes</option>--}}
+{{--                                                        <option>No</option>--}}
+{{--                                                        <option>Others</option>--}}
+{{--                                                    </select>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </li>--}}
+{{--                                        <li>--}}
+{{--                                            <div class="search_option_two">--}}
+{{--                                                <div class="candidate_revew_select">--}}
+{{--                                                    <select class="selectpicker w100 show-tick">--}}
+{{--                                                        <option>Year built</option>--}}
+{{--                                                        <option>2013</option>--}}
+{{--                                                        <option>2014</option>--}}
+{{--                                                        <option>2015</option>--}}
+{{--                                                        <option>2016</option>--}}
+{{--                                                        <option>2017</option>--}}
+{{--                                                        <option>2018</option>--}}
+{{--                                                        <option>2019</option>--}}
+{{--                                                        <option>2020</option>--}}
+{{--                                                    </select>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </li>--}}
+
+
                                         <li>
                                             <div class="search_option_button">
                                                 <button type="submit" class="btn btn-block btn-thm">Search</button>
                                             </div>
                                         </li>
+                                        </form>
                                     </ul>
                                 </div>
                             </div>
@@ -281,7 +160,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
-                    @foreach($getall as $item)
+                    @foreach($property as $item)
                             <div class="col-md-6 col-lg-4">
                                 <div class="feat_property home7">
                                     <a href="{{url('property')}}/{{$item->id}}">

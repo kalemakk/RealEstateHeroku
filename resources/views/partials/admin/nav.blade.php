@@ -62,14 +62,52 @@
                 <span class="mt20">Find A House</span>
             </div>
             <ul class="menu_bar_home2">
+                <li class="list-inline-item list_s"><a href="{{url('/admin')}}"><span class="flaticon-user-1"></span></a></li>
                 <li class="list-inline-item"><a href="#menu"><span></span></a></li>
             </ul>
         </div>
     </div><!-- /.mobile-menu -->
     <nav id="menu" class="stylehome1">
         <ul>
-            <li><a href="page-contact.html">Contact</a></li>
-            <li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="#"><span class="flaticon-plus"></span> Create Listing</a></li>
+            <li><span></span></li>
+            <li><a href="{{url('/admin')}}">Dashboard</a></li>
+            <li><span>Property</span>
+                <ul>
+                    <li><a href="{{route('property.index')}}">View All Property</a></li>
+                </ul>
+            </li>
+            <li><span>My Profile</span>
+                <ul>
+                    <li><a href="{{route('user.index')}}">View Profile</a></li>
+                    <li><a href="{{route('user.index')}}">Edit Profile</a></li>
+
+                </ul>
+            </li>
+            <li><span>Location</span>
+                <ul>
+                    <li><a href="{{route('location.index')}}">View Locations</a></li>
+                    <li><a href="{{route('location.index')}}">Edit Location</a></li>
+                    <li><a href="{{route('location.create')}}">Create Location</a></li>
+
+                </ul>
+            </li>
+
+{{--            <li><span class="flaticon-logout text-thm" ><a href="{{route('logout')}}"> Logout</a></span></li>--}}
+{{--            <li><a href="{{route('logout')}}"><span class="flaticon-logout text-thm">{{ __('Logout') }}</span></a></li>--}}
+
+
+
+            <li>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="flaticon-logout"></i> <span>{{ __('Logout') }}</span></a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+
+            </li>
+
+
+
+{{--            <li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="#"><span class="flaticon-plus"></span> Create Listing</a></li>--}}
         </ul>
     </nav>
 </div>

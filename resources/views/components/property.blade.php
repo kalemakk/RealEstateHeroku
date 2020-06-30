@@ -29,7 +29,7 @@
                                     @else
                                         <h4 class="text-thm2">Sh.{{$item->property_price}}</h4>
                                     @endif
-                                        <p class="text-thm3"><span class="flaticon-placeholder"></span> {{$item->property_location}}</p>
+                                        <p class="text-thm3"><span class="flaticon-placeholder"></span> {{$item->location->state}}, {{$item->location->district->name}}</p>
                                     <ul class="prop_details mb0 ">
                                         <li class="list-inline-item"><span><h5 class="text-thm3">Rooms: {{$item->property_number_of_rooms}}</h5></span></li>
                                         <li class="list-inline-item"><span></span></li>

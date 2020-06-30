@@ -24,10 +24,7 @@
                     <div class="form_grid">
                         <h4 class="mb5">Send Us An Email</h4>
                         <p>Talk to Us in case of anything, we are honored to listen to you.</p>
-
-
-{{--                        <form class="contact_form" id="contact_form" name="contact_form" action="#" method="post" novalidate="novalidate">--}}
-                                <form action="{{url('mail')}}" class="contact_form">
+                        <form action="{{url('mail')}}" class="contact_form">
                                 <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -59,9 +56,6 @@
                                 </div>
                             </div>
                         </form>
-
-
-
                     </div>
                 </div>
                 <div class="col-lg-5 col-xl-4">

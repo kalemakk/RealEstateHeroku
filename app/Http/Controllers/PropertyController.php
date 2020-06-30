@@ -27,20 +27,11 @@ class PropertyController extends Controller
      */
     public function index()
     {
-//        $property = Property::all();
-        $getall= Property::orderBy('created_at','desc')->get();
 
         if (Auth::check()) {
-            return view('Property.index',compact('getall'));
-
+            return view('Property.index');
         }
-        return view('Property.client_index', compact('getall'));
-
-//        {{ $articles->render() }}
-//        return view('welcome', ['articles' => $articles, 'tags' => $tags]);
-//        {{ $article->user->name }}
-//        $articles = Article::where('user_id', 1)->orderBy('title', 'desc')->take(5)->get();
-
+        return view('Property.client_index');
     }
     /**
      * Show the form for creating a new resource.
@@ -49,9 +40,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        $location = Location::all();
-        $district = District::all();
-        return view('Property.create',compact('location','district'));
+        return view('Property.create');
     }
 
     /**
@@ -121,8 +110,11 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        $property = Property::findorFail($id);
-        return view('Property.singleproperty',compact('property'));
+        $single = Property::findorFail($id);
+        $mess ='too good';
+        $type = $single->property_type;
+        return view('Property.singleproperty',compact('single','mess','type'));
+//        return dd($type);
     }
 
     /**
@@ -176,9 +168,7 @@ class PropertyController extends Controller
     public function destroy(Property $property)
     {
         $property->delete();
-//        Property::findOrFail($id)->delete();
         return redirect('/property')->with('success', 'Property deleted successfully');;
-//        return dd($property);
 
     }
 }

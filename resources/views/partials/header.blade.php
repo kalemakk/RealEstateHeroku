@@ -6,12 +6,13 @@
     <meta name="description" content="FindHouse - Real Estate HTML Template">
     <meta name="CreativeLayers" content="ATFN">
     <!-- css file -->
-    <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+{{--    <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}">--}}
     <link rel="stylesheet" href="{{url('css/style.css')}}">
     <!-- Responsive stylesheet -->
     <link rel="stylesheet" href="{{url('css/responsive.css')}}">
     <!-- Title -->
-    <title>FindHouse - Real Estate HTML Template</title>
+    <title>FindAHouse</title>
     <!-- Favicon -->
     <link href="{{url('images/favicon.ico')}}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
     <link href="{{url('images/favicon.ico')}}" sizes="128x128" rel="shortcut icon" />

@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('home');
-});
+//
+//Route::get('/', function () {
+//    return view('home');
+//});
+Route::get('/',view('home'));
 
 Route::get('/admin', function () {
     return view('admin.dashboard');
@@ -35,6 +36,9 @@ Route::get('contactUs', function () {
 });
 
 Route::get('mail','MailSend@mailsend');
+Route::get('search','search');
+
+Route::resource('user', 'User');
 
 
 Route::resource('property', 'PropertyController');

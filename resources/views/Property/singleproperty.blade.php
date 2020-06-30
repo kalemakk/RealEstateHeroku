@@ -8,17 +8,17 @@
                 <div class="row mb30">
                     <div class="col-lg-7 col-xl-8">
                         <div class="single_property_title mt30-767">
-                            <h2 class="text-capitalize">{{$property->property_name}}</h2>
-                            <p class="text-capitalize">{{$property->property_location}}</p>
+                            <h2 class="text-capitalize">{{$single->property_name}}</h2>
+                            <p class="text-capitalize">{{$single->property_location}}</p>
                         </div>
                     </div>
                     <div class="col-lg-5 col-xl-4">
                         <div class="single_property_social_share">
                             <div class="price float-left fn-400">
-                                @if($property->property_category === "rent")
-                                <h2>Sh.{{$property->property_price}}<small>/mo</small></h2>
+                                @if($single->property_category === "rent")
+                                <h2>Sh.{{$single->property_price}}<small>/mo</small></h2>
                                     @else
-                                    <h2>Sh.{{$property->property_price}}</h2>
+                                    <h2>Sh.{{$single->property_price}}</h2>
                                 @endif
                             </div>
                             <div class="spss style2 mt20 text-right tal-400">
@@ -84,14 +84,14 @@
                                 <div class="listing_single_description">
                                     <div class="lsd_list">
                                         <ul class="mb0">
-                                            <li class="list-inline-item"><a href="#" class="text-capitalize">{{$property->property_type}}</a></li>
-                                            <li class="list-inline-item"><a href="#" class="text-capitalize">{{$property->property_category}}</a></li>
-                                            <li class="list-inline-item"><a href="#" class="text-capitalize">{{$property->property_location}}</a></li>
-                                            <li class="list-inline-item"><a href="#" class="text-capitalize">Sq Ft: {{$property->property_size}}</a></li>
+                                            <li class="list-inline-item"><a href="#" class="text-capitalize">{{$single->property_type}}</a></li>
+                                            <li class="list-inline-item"><a href="#" class="text-capitalize">{{$single->property_category}}</a></li>
+                                            <li class="list-inline-item"><a href="#" class="text-capitalize">{{$single->property_location}}</a></li>
+                                            <li class="list-inline-item"><a href="#" class="text-capitalize">Sq Ft: {{$single->property_size}}</a></li>
                                         </ul>
                                     </div>
                                     <h4 class="mb30">Description</h4>
-                                    <p class="mb25">{{$property->property_description}}</p>
+                                    <p class="mb25">{{$single->property_description}}</p>
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -108,14 +108,14 @@
                                                 <li><p>Year Built :</p></li>
                                             </ul>
                                             <ul class="list-inline-item">
-                                                <li><p><span>{{$property->property_id}}</span></p></li>
-                                                @if($property->property_category ==='rent')
-                                                <li><p><span>Sh.{{$property->property_price}}<small>/mo</small></span></p></li>
+                                                <li><p><span>{{$single->property_id}}</span></p></li>
+                                                @if($single->property_category ==='rent')
+                                                <li><p><span>Sh.{{$single->property_price}}<small>/mo</small></span></p></li>
                                                 @else
-                                                    <li><p><span>Sh.{{$property->property_price}}</span></p></li>
+                                                    <li><p><span>Sh.{{$single->property_price}}</span></p></li>
                                                 @endif
-                                                    <li><p><span>{{$property->property_size}} Sq Ft</span></p></li>
-                                                <li><p><span>{{$property->property_date_of_construction}}</span></p></li>
+                                                    <li><p><span>{{$single->property_size}} Sq Ft</span></p></li>
+                                                <li><p><span>{{$single->property_date_of_construction}}</span></p></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-6 col-lg-6 col-xl-6">
@@ -126,10 +126,10 @@
                                                 <li><p>Property Category :</p></li>
                                             </ul>
                                             <ul class="list-inline-item">
-                                                <li><p><span class="text-capitalize">{{$property->property_type}}</span></p></li>
-                                                <li><p><span class="text-capitalize">{{$property->property_usage}}</span></p></li>
-                                                <li><p><span class="text-capitalize">{{$property->location->state}}</span></p></li>
-                                                <li><p><span class="text-capitalize">{{$property->property_category}}</span></p></li>
+                                                <li><p><span class="text-capitalize">{{$single->property_type}}</span></p></li>
+                                                <li><p><span class="text-capitalize">{{$single->property_usage}}</span></p></li>
+                                                <li><p><span class="text-capitalize">{{$single->location->state}}</span></p></li>
+                                                <li><p><span class="text-capitalize">{{$single->property_category}}</span></p></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -172,81 +172,11 @@
                             <div class="col-lg-12">
                                 <h4 class="mt30 mb30">Similar Properties</h4>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="feat_property">
-                                    <div class="thumb">
-                                        <img class="img-whp" src="{{url('images/property/fp1.jpg')}}" alt="fp1.jpg">
-                                        <div class="thmb_cntnt">
-                                            <ul class="tag mb0">
-                                                <li class="list-inline-item"><a href="#">For Rent</a></li>
-                                                <li class="list-inline-item"><a href="#">Featured</a></li>
-                                            </ul>
-                                            <ul class="icon mb0">
-                                                <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                                                <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                                            </ul>
-                                            <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                                        </div>
-                                    </div>
-                                    <div class="details">
-                                        <div class="tc_content">
-                                            <p class="text-thm">Apartment</p>
-                                            <h4>Renovated Apartment</h4>
-                                            <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                                            <ul class="prop_details mb0">
-                                                <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                                                <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                                                <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="fp_footer">
-                                            <ul class="fp_meta float-left mb0">
-                                                <li class="list-inline-item"><a href="#"><img src="{{url('images/property/pposter1.png')}}" alt="pposter1.png"></a></li>
-                                                <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                                            </ul>
-                                            <div class="fp_pdate float-right">4 years ago</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="feat_property">
-                                    <div class="thumb">
-                                        <img class="img-whp" src="{{url('images/property/fp2.jpg')}}" alt="fp2.jpg">
-                                        <div class="thmb_cntnt">
-                                            <ul class="tag mb0">
-                                                <li class="list-inline-item"><a href="#">For Rent</a></li>
-                                            </ul>
-                                            <ul class="icon mb0">
-                                                <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                                                <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                                            </ul>
-                                            <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                                        </div>
-                                    </div>
-                                    <div class="details">
-                                        <div class="tc_content">
-                                            <p class="text-thm">Apartment</p>
-                                            <h4>Renovated Apartment</h4>
-                                            <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                                            <ul class="prop_details mb0">
-                                                <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                                                <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                                                <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="fp_footer">
-                                            <ul class="fp_meta float-left mb0">
-                                                <li class="list-inline-item"><a href="#"><img src="{{url('images/property/pposter1.png')}}" alt="pposter1.png"></a></li>
-                                                <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                                            </ul>
-                                            <div class="fp_pdate float-right">4 years ago</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <x-similar :property_type="{{$single->property_type}}":property_category="{{$single->property_category}}"/>--}}
 
-
+{{--                            <x-similar :mess="$mess":property_type="$property_type"/>--}}
+{{--                            <x-similar :type="$type"/>--}}
+                            <x-similar :type="$single->property_type"/>
 
 
 
@@ -264,7 +194,7 @@
                                     <div class="media">
                                         <img class="mr-3" src="{{url('images/team/lc1.png')}}" alt="lc1.png">
                                         <div class="media-body">
-                                            <h5 class="mt-0 mb0">{{$property->user->name}}</h5>
+                                            <h5 class="mt-0 mb0">{{$single->user->name}}</h5>
                                             <p class="mb0">(123)456-7890</p>
                                             <p class="mb0"><a href="https://grandetest.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c0a9aea6af80a6a9aea4a8afb5b3a5eea3afad">[email&#160;protected]</a></p>
                                             <a class="text-thm" href="#">View My Listing</a>
@@ -291,10 +221,10 @@
                                     </li>
                                     <li class="search_area">
                                         <div class="form-group">
-                                            <textarea id="form_message" name="mail_body" class="form-control required" rows="5" required="required" placeholder="I'm interest in property {{$property->property_id}}">I'm interest in property {{$property->property_id}}</textarea>
+                                            <textarea id="form_message" name="mail_body" class="form-control required" rows="5" required="required" placeholder="I'm interest in property {{$single->property_id}}">I'm interest in property {{$single->property_id}}</textarea>
                                         </div>
                                     </li>
-                                        <input type="hidden" id="custId" name="mail_subject" value="Am in need of Property {{$property->property_id}}">
+                                        <input type="hidden" id="custId" name="mail_subject" value="Am in need of Property {{$single->property_id}}">
                                         <li>
                                         <div class="search_option_button">
                                             <button type="submit" class="btn btn-block btn-thm">Contact</button>
@@ -307,8 +237,8 @@
                                         <div class="">
                                             <a href="https://api.whatsapp.com/send?phone=256781116999"><button type="button" class="btn btn-block btn-transparent fa fa-whatsapp " style="color: #1c7430"> Chat on WhatsApp</button></a>
 
-                                            {{--                                            <a href="https://api.whatsapp.com/send?phone=256781116999&text=am interested in property {{$property->property_id}}"><button type="button" class="btn btn-block btn-transparent fa fa-whatsapp " style="color: #1c7430"> Chat on WhatsApp</button></a>--}}
-{{--                                            <a href="https://api.whatsapp.com/send?send?phone=&text=am interested in property {{$property->property_id}}"><button type="submit" class="btn btn-block btn-transparent fa fa-whatsapp " style="color: #1c7430"> Chat on WhatsApp</button></a>--}}
+                                            {{--                                            <a href="https://api.whatsapp.com/send?phone=256781116999&text=am interested in property {{$single->property_id}}"><button type="button" class="btn btn-block btn-transparent fa fa-whatsapp " style="color: #1c7430"> Chat on WhatsApp</button></a>--}}
+{{--                                            <a href="https://api.whatsapp.com/send?send?phone=&text=am interested in property {{$single->property_id}}"><button type="submit" class="btn btn-block btn-transparent fa fa-whatsapp " style="color: #1c7430"> Chat on WhatsApp</button></a>--}}
 {{--                                            <a href="https://api.whatsapp.com/send?phone=256781116999">Send Message</a>--}}
 
                                         </div>

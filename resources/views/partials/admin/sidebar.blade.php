@@ -3,9 +3,9 @@
         <li class="title pt30 pb30"><span>Main</span></li>
         <li class="treeview"><a href="{{url('/admin')}}"><i class="flaticon-layers"></i><span> Dashboard</span></a></li>
         <li class="title"><span>Manage Property</span></li>
-        <li><a href="{{url('property')}}"><i class="flaticon-home"></i> <span> All Property</span></a></li>
+        <li><a href="{{route('property.index')}}"><i class="flaticon-home"></i> <span> All Property</span></a></li>
         <li class="title"><span>Manage Account</span></li>
-        <li><a href="{{route('property.create')}}"><i class="flaticon-user"></i> <span>My Profile</span></a></li>
+        <li><a href="{{route('user.index')}}"><i class="flaticon-user"></i> <span>My Profile</span></a></li>
 
         <li class="title"><span>Manage Property Location</span></li>
         <li><a href="{{route('location.create')}}"><i class="flaticon-street-view"></i> <span>View Locations</span></a></li>
